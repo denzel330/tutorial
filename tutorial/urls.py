@@ -9,7 +9,7 @@ Function views
 Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
+Including another URL Configuration
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
@@ -24,11 +24,11 @@ router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 
 # Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
+# Additionally, we include login URLs for the browse-able API.
 urlpatterns = [
 
-path('admin/', admin.site.urls),
-path('', include(router.urls)),
-path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+  path('admin/', admin.site.urls),
+  path('', include(router.urls)),
+  path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 
 ]
